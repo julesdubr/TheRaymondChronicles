@@ -8,6 +8,8 @@ public class PlayCountdown : MonoBehaviour
 
     private void OnEnable()
     {
+        if (musicSource.isPlaying)
+            musicSource.Stop();
         musicSource.PlayOneShot(musicStart);
         musicSource.volume = volume;
     }
